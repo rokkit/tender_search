@@ -1,0 +1,274 @@
+.newClaim {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.newClaimTitle {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.newClaimSubTitle {
+  color: #999;
+  font-size: 25px;
+}
+
+.newClaimAction {
+  margin-top: 30px;
+  position: relative;
+}
+
+.newClaimInput {
+  height: 60px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 220px 0 60px;
+  background-color: #fff;
+  font-weight: 500;
+  border: none;
+  background-position: 20px 16px;
+  border: 2px solid #f1f1f1;
+  background-repeat: no-repeat;
+  background-image: url('edit.svg');
+  text-overflow: ellipsis;
+  outline: none;
+}
+
+.newClaimInput.active {
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown {
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  border-left: 2px solid #f1f1f1;
+  border-right: 2px solid #f1f1f1;
+  border-bottom: 2px solid #f1f1f1;
+  background: #fff;
+  padding: 12px 0 8px;
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+  position: absolute;
+  top: 60px;
+  visibility: hidden;
+}
+
+.dropdown.active {
+  visibility: visible;
+  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  font-size: 15px;
+  padding: 4px 20px 8px;
+  color: #999;
+}
+
+.list {
+  padding: 0 15px;
+  margin-bottom: 6px;
+}
+
+.item {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 14px;
+  border: 2px solid #333;
+  color: #333;
+  cursor: pointer;
+  line-height: 34px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.item.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.go {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #3797fe;
+  color: #fff;
+  z-index: 2;
+  white-space: nowrap;
+  text-align: center;
+  display: flex;
+  line-height: 40px;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.go:disabled {
+  pointer-events: none;
+  background-color: #eee;
+  color: #999;
+}
+
+.go.loading {
+  background-color: #fff;
+  justify-content: flex-end;
+}
+
+.loader {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 1em;
+  height: 1em;
+  color: #bbb;
+  border: 2px solid;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+}
+
+.input + .input {
+  margin-top: 20px;
+}
+
+.textInput {
+  height: 60px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px 0 60px;
+  background-color: #fff;
+  font-weight: 500;
+  border: none;
+  background-position: 20px 16px;
+  border: 2px solid #f1f1f1;
+  background-repeat: no-repeat;
+  text-overflow: ellipsis;
+}
+
+.inputPhone {
+  background-image: url('phone.svg');
+}
+
+.inputHome {
+  background-image: url('home.svg');
+}
+
+.actions {
+  margin-top: 26px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #3797fe;
+  line-height: 40px;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.button:disabled {
+  pointer-events: none;
+  background-color: #eee;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .noWeb {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .web {
+    display: none;
+  }
+
+  .newClaim {
+    padding: 0 20px;
+  }
+
+  .newClaimTitle {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .newClaimSubTitle {
+    font-size: 18px;
+  }
+
+  .newClaimInput {
+    padding: 0 60px 0 60px;
+  }
+
+  .go {
+    width: 40px;
+    padding: 0;
+    border-radius: 20px;
+    right: 10px;
+  }
+
+  .go.loading {
+    right: 20px;
+  }
+
+  .go .noWeb {
+    display: flex;
+  }
+}
+
+.NewOrder_go__8hTne {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #3797fe;
+  color: #fff;
+  z-index: 2;
+  white-space: nowrap;
+  text-align: center;
+  display: flex;
+  line-height: 40px;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}

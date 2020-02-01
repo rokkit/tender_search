@@ -25,10 +25,35 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+  <!-- base href="https://edu.upt24.ru/" -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="https://edu.upt24.ru/manifest.json">
+  <link rel="shortcut icon" href="https://edu.upt24.ru/favicon.ico">
+  <title>Единый реестр закупок - Портал поставщиков</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,latin-ext&display=swap" rel="stylesheet">
+  <link href="/static/vodudali.css" rel="stylesheet" />
+  <link href="/static/15.css" rel="stylesheet" />
+  <link href="/static/main.css" rel="stylesheet" />
+  <link href="/static/style.css" rel="stylesheet" />
+
+  <meta property="og:title" content="Портал поставщиков" data-react-helmet="true">
+  <meta property="og:description"
+    content="Портал поставщиков – уникальный ресурс для бизнес-сообщества – единая витрина всех закупок города Москвы и удобная площадка для совершения сделок физическими, юридическими лицами и государственными заказчиками"
+    data-react-helmet="true">
+  <meta property="og:image" content="/static/media/pp_logo_mini.3064ec4b.svg" data-react-helmet="true">
+  <meta name="twitter:title" content="Портал поставщиков" data-react-helmet="true">
+  <meta name="twitter:description"
+    content="Портал поставщиков – уникальный ресурс для бизнес-сообщества – единая витрина всех закупок города Москвы и удобная площадка для совершения сделок физическими, юридическими лицами и государственными заказчиками"
+    data-react-helmet="true">
+  <meta name="twitter:image" content="/static/media/pp_logo_mini.3064ec4b.svg" data-react-helmet="true">
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +64,487 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <div class="top-panel-frame-wrp" style="height: 60px; position: relative; z-index: 1;"><iframe
+      src="/static/header.html" scrolling="no" id="header_frame" class="top-panel-frame" width="100%"
+      frameborder="0"></iframe></div><noscript>You need to enable JavaScript to run this app.</noscript>
+  <script type="text/javascript" charset="utf-8" async="" src="/static/all.php"></script>
+  <div></div>
+  <script type="text/javascript" id="statsmosru" src="/static/counter.js" onload="statsMosRuCounter()" defer="defer"
+    async="true"></script>
+
+  <div id="root">
+    <div>
+      <div id="yaCounter19942426">
+        <div>
+          <script type="text/javascript" async="" src="/static/watch.js"></script>
+        </div>
+      </div>
+      <div class="BlackHeaderStyles__BlackHeaderBackground-sc-12rniv-0 jlHTpU">
+        <div class="ui container">
+          <div class="ui vertically padded middle aligned grid">
+            <div class="row">
+              <div
+                class="five wide computer four wide large screen four wide mobile six wide tablet four wide widescreen column">
+                <a href="http://mos.ru/" target="_blank" rel="noopener noreferrer">
+                  <div class="ui small inverted header BlackHeaderStyles__MoscowLink-sc-12rniv-1 eOSJHM"><img
+                      title="Правительство Москвы" src="/static/mos_logo.png"
+                      class="ui image BlackHeaderStyles__LinkImage-sc-12rniv-2 dViNhs">
+                    <div class="content"><span>Правительство <br>Москвы</span></div>
+                  </div>
+                </a><a href="https://www.mos.ru/tender/" target="_blank" rel="noopener noreferrer">
+                  <div class="ui small inverted header BlackHeaderStyles__DepartmentLink-sc-12rniv-3 inkmML"><img
+                      title="Департамент города Москвы по конкурентной политике"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAcCAYAAABlL09dAAACw0lEQVRIia3WT2geRRgG8N9sPkspFdQIVrBi/APS4BovggcFM/gncxBE8KBi7cl6KkgFqSjVgopCBC9aEBSUXkQ8uUHItlDwJGgyBal/QChUrMWS4kGjNethN/L18/tskvaBYXdm3n32mZ153nfDwsx04xKiCKG9dv1wqVpZ1QFnV4nXomRbEcJVa43vrd5MzR0eGpBTHMfLeAzLRQiTZVWfuaCQURM5xU05xWfxbSfgVvyIqbUoHkqcU9yCBTyAe8uq3l1W9S/4DXfnFK/ZqOIrcS32llV9rG98Lx7ERxsiLqv6JA5gPqf4UN/4MdyD7TnFhzeiWFnVs3hTu2n9439hD2ZzipvXTdxhBZcPeennWMRz6ybOKU5iGrfnFC8bEnIAz+cUe0Pm/kucU7w+p/gBjnbtFvw95NlzWNLnBWia5nzinOLVOcVZ7RJ/xk04iBdwNqcY+wnKql7EPH7KKd45VHERwotaI2zFJF7CLnyPG7Afn+YU9w+Q78Qh7BzgHVtdRom78AMe136/47i/rOqFbkVz+CKn+E5Z1adyijvwFibw6ADx1l4RwvhK05wpQkj4GMvYVVb1kQF133QbNZ5T3Icn8BreLqv6z/7YlabRW2maX4sQjmqdtg+flFU9Kkcf0lr9Q+woq/rUiDhhYWa6KUJ4Bu+VVX1udaJTd91gPDbj91GEHY73OunvDkmb9600TXUBgqEoQjj/DOYUr7jts/mlrjvXKVwXQghyikuDrplYTPGrjahcxcLMNAacV1b11y6y5k3NHV5fzVsnej0oQpjQlp2RtW+tyClO4I+iCOFVvJ9T3HaxMnOKm3AEB0NOcQyv42mc0GatfizjS7xRVvWJnOIjeArbB+LGtPY+jZv/PU5dAb3RQBrEFsxgd6dmEq/gOww69GRZ1aebpln7Oc0pPqn9v7ijrOql/4ttmsY/SOHgGpFsjtQAAAAASUVORK5CYII="
+                      class="ui image BlackHeaderStyles__LinkImage-sc-12rniv-2 dViNhs">
+                    <div class="content"><span>Департамент города Москвы <br> по конкурентной политике</span></div>
+                  </div>
+                </a></div>
+              <div
+                class="center aligned two wide computer six wide large screen four wide mobile two wide tablet six wide widescreen column">
+                <a href="https://edu.upt24.ru/knowledgebase/main">
+                  <div class="ui small inverted header BlackHeaderStyles__HelpLink-sc-12rniv-4 dxAFWT"><img
+                      title="Инструкции по работе с Порталом" src="/static/info.svg"
+                      class="ui image BlackHeaderStyles__LinkMiniImage-sc-12rniv-7 kdYXdI">
+                    <div class="content">Инструкции по работе с Порталом</div>
+                  </div>
+                </a><a href="https://old.edu.upt24.ru/#/help/envcheck">
+                  <div class="ui small inverted header BlackHeaderStyles__EnvcheckLink-sc-12rniv-5 fiYipN"><img
+                      title="Проверка настройки рабочего места" src="/static/settings.svg"
+                      class="ui image BlackHeaderStyles__LinkMiniImage-sc-12rniv-7 kdYXdI">
+                    <div class="content">Проверка настройки рабочего места</div>
+                  </div>
+                </a></div>
+              <div
+                class="right aligned five wide computer two wide large screen four wide mobile four wide tablet two wide widescreen column">
+                <img src="/static/squares.svg" class="ui inline image BlackHeaderStyles__MosMenuIcon-sc-12rniv-6 cBZssZ"
+                  width="30" height="30"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="TopMenuStyles__TopMenuContainer-sc-1jpq1td-0 junnSG">
+        <div class="ui container">
+          <div class="ui vertically padded middle aligned grid">
+            <div class="row">
+              <div
+                class="four wide computer three wide large screen three wide mobile two wide tablet three wide widescreen column">
+                <a href="https://edu.upt24.ru/"><img src="/static/pp_logo.svg"
+                    class="ui inline image TopMenuStyles__FullLogo-sc-1jpq1td-1 cMurCD" height="38"></a>
+                <div style="display: inline;" class="ui small header MainMenuStyles__ButtonHeader-sc-1dp6bew-1 kPQeHP">
+                  <img src="/static/burger.svg" class="ui image MainMenuStyles__IconImage-sc-1dp6bew-0 euXvhi">
+                  <div class="content">Меню</div>
+                </div>
+                <div style="display: none;" class="ui small header MainMenuStyles__ButtonHeader-sc-1dp6bew-1 kPQeHP">
+                  <img src="/static/close.svg" class="ui image MainMenuStyles__IconImage-sc-1dp6bew-0 euXvhi">
+                  <div class="content">Меню</div>
+                </div>
+                <div class="ui header TopMenuStyles__IsTestHeader-sc-1jpq1td-7 eUhTfC">Демонстрационная версия</div>
+              </div>
+              <div
+                class="center aligned four wide computer six wide large screen six wide mobile five wide tablet six wide widescreen column">
+                <div class="SupportModalStyles__Trigger-sc-1th3c7c-0 eevxzQ">
+                  <div class="ui small header TopMenuStyles__SupportLink-sc-1jpq1td-5 AdQhs"><img src="/static/qa.svg"
+                      class="ui image TopMenuStyles__SupportImg-sc-1jpq1td-3 ejckGE">
+                    <div class="content">Оставить обращение</div>
+                  </div>
+                </div><a href="https://edu.upt24.ru/knowledgebase/main">
+                  <div
+                    class="ui small header TopMenuStyles__SupportLink-sc-1jpq1td-5 TopMenuStyles__QALink-sc-1jpq1td-6 kCNiAH">
+                    <img src="/static/idea.svg" class="ui image TopMenuStyles__KnowledgeBaseImg-sc-1jpq1td-4 ikGJiw">
+                    <div class="content">Центр поддержки</div>
+                  </div>
+                </a><span class="SpanLink-sc-18ruhpr-0 ihLkyC"><span>
+                    <div class="CartPopupButtonStyles__CartLink-sc-1ndjsp1-0 ZBIcW ui small header">
+                      <div class="CartPopupButtonStyles__CartImage-sc-1ndjsp1-2 hzSnrN"><img
+                          src="/static/cart-active.svg" class="ui hidden image"><img src="/static/cart.svg"
+                          class="ui image"></div>
+                      <div class="content">Корзина</div>
+                    </div>
+                  </span></span>
+              </div>
+              <div
+                class="right aligned four wide computer three wide large screen three wide mobile five wide tablet three wide widescreen column">
+                <div class="ui right floated buttons"><a class="ui primary button" role="button"
+                    href="https://edu.upt24.ru/registration">Зарегистрироваться</a><button
+                    class="ui button">Войти</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Toastify"></div>
+      <div class="pushable">
+        <div class="ui overlay top sidebar">
+          <div class="ui container">
+            <div
+              class="ui stackable vertically padded very relaxed middle aligned two column grid MainMenuItemsStyles__ItemsContainer-sc-1dhiygf-0 kBGHSn">
+              <div class="row">
+                <div class="nine wide column">
+                  <div class="ui divided two column grid">
+                    <div class="row">
+                      <div
+                        class="twelve wide computer five wide large screen twelve wide mobile twelve wide tablet five wide widescreen column">
+                        <div class="ui middle aligned grid">
+                          <div class="row">
+                            <div
+                              class="middle aligned six wide computer six wide large screen twelve wide mobile six wide tablet six wide widescreen column MainMenuItemsStyles__ItemContainer-sc-1dhiygf-1 gITwqG">
+                              <a href="https://edu.upt24.ru/purchase/list">
+                                <div
+                                  class="ui tiny center aligned header MainMenuItemsStyles__MenuItemHeaderConteiner-sc-1dhiygf-6 GrjSK">
+                                  <img src="/static/vitrina.svg"
+                                    class="ui image MainMenuItemsStyles__MenuItemImage-sc-1dhiygf-5 dLyMLH">
+                                  <div class="content MainMenuItemsStyles__MenuItemHeader-sc-1dhiygf-4 fWHjex">Единый
+                                    реестр закупок</div>
+                                </div>
+                              </a></div>
+                            <div
+                              class="middle aligned six wide computer six wide large screen twelve wide mobile six wide tablet six wide widescreen column MainMenuItemsStyles__ItemContainer-sc-1dhiygf-1 gITwqG">
+                              <a href="https://old.edu.upt24.ru/#/offerauction">
+                                <div
+                                  class="ui tiny center aligned header MainMenuItemsStyles__MenuItemHeaderConteiner-sc-1dhiygf-6 GrjSK">
+                                  <img src="/static/auction.svg"
+                                    class="ui image MainMenuItemsStyles__MenuItemImage-sc-1dhiygf-5 dLyMLH">
+                                  <div class="content MainMenuItemsStyles__MenuItemHeader-sc-1dhiygf-4 fWHjex">
+                                    Котировочные сессии</div>
+                                </div>
+                              </a></div>
+                            <div
+                              class="middle aligned six wide computer six wide large screen twelve wide mobile six wide tablet six wide widescreen column MainMenuItemsStyles__ItemContainer-sc-1dhiygf-1 gITwqG">
+                              <a href="https://old.edu.upt24.ru/#/need">
+                                <div
+                                  class="ui tiny center aligned header MainMenuItemsStyles__MenuItemHeaderConteiner-sc-1dhiygf-6 GrjSK">
+                                  <img src="/static/need.svg"
+                                    class="ui image MainMenuItemsStyles__MenuItemImage-sc-1dhiygf-5 dLyMLH">
+                                  <div class="content MainMenuItemsStyles__MenuItemHeader-sc-1dhiygf-4 fWHjex">Закупки
+                                    по потребностям</div>
+                                </div>
+                              </a></div>
+                            <div
+                              class="middle aligned six wide computer six wide large screen twelve wide mobile six wide tablet six wide widescreen column MainMenuItemsStyles__ItemContainer-sc-1dhiygf-1 gITwqG">
+                              <a href="https://old.edu.upt24.ru/#/tenders">
+                                <div
+                                  class="ui tiny center aligned header MainMenuItemsStyles__MenuItemHeaderConteiner-sc-1dhiygf-6 GrjSK">
+                                  <img src="/static/tenders.svg"
+                                    class="ui image MainMenuItemsStyles__MenuItemImage-sc-1dhiygf-5 dLyMLH">
+                                  <div class="content MainMenuItemsStyles__MenuItemHeader-sc-1dhiygf-4 fWHjex">Закупки
+                                  </div>
+                                </div>
+                              </a></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="twelve wide computer seven wide large screen twelve wide mobile twelve wide tablet seven wide widescreen column MainMenuItemsStyles__DividedLine-sc-1dhiygf-2 bZUnyi">
+                        <div class="ui grid">
+                          <div class="row">
+                            <div
+                              class="middle aligned six wide computer four wide large screen twelve wide mobile six wide tablet four wide widescreen column MainMenuItemsStyles__ItemContainer-sc-1dhiygf-1 gITwqG">
+                              <a href="https://old.edu.upt24.ru/#/suppliers">
+                                <div
+                                  class="ui tiny header MainMenuItemsStyles__MenuItemHeaderConteiner-sc-1dhiygf-6 GrjSK">
+                                  <img src="/static/suppliers.svg"
+                                    class="ui image MainMenuItemsStyles__MenuItemImage-sc-1dhiygf-5 dLyMLH">
+                                  <div class="content MainMenuItemsStyles__MenuItemHeader-sc-1dhiygf-4 fWHjex">
+                                    Поставщики</div>
+                                </div>
+                              </a></div>
+                            <div
+                              class="middle aligned six wide computer four wide large screen twelve wide mobile six wide tablet four wide widescreen column MainMenuItemsStyles__ItemContainer-sc-1dhiygf-1 gITwqG">
+                              <a href="https://edu.upt24.ru/sku/catalog">
+                                <div
+                                  class="ui tiny header MainMenuItemsStyles__MenuItemHeaderConteiner-sc-1dhiygf-6 GrjSK">
+                                  <img src="/static/sku.svg"
+                                    class="ui image MainMenuItemsStyles__MenuItemImage-sc-1dhiygf-5 dLyMLH">
+                                  <div class="content MainMenuItemsStyles__MenuItemHeader-sc-1dhiygf-4 fWHjex">Товары
+                                  </div>
+                                </div>
+                              </a></div>
+                            <div
+                              class="middle aligned six wide computer four wide large screen twelve wide mobile six wide tablet four wide widescreen column MainMenuItemsStyles__ItemContainer-sc-1dhiygf-1 gITwqG">
+                              <a href="https://old.edu.upt24.ru/#/plans">
+                                <div
+                                  class="ui tiny header MainMenuItemsStyles__MenuItemHeaderConteiner-sc-1dhiygf-6 GrjSK">
+                                  <img src="/static/plans.svg"
+                                    class="ui image MainMenuItemsStyles__MenuItemImage-sc-1dhiygf-5 dLyMLH">
+                                  <div class="content MainMenuItemsStyles__MenuItemHeader-sc-1dhiygf-4 fWHjex">Планы
+                                  </div>
+                                </div>
+                              </a></div>
+                            <div
+                              class="middle aligned six wide computer four wide large screen twelve wide mobile six wide tablet four wide widescreen column MainMenuItemsStyles__ItemContainer-sc-1dhiygf-1 gITwqG">
+                              <a href="https://old.edu.upt24.ru/#/customers">
+                                <div
+                                  class="ui tiny header MainMenuItemsStyles__MenuItemHeaderConteiner-sc-1dhiygf-6 GrjSK">
+                                  <img src="/static/customers.svg"
+                                    class="ui image MainMenuItemsStyles__MenuItemImage-sc-1dhiygf-5 dLyMLH">
+                                  <div class="content MainMenuItemsStyles__MenuItemHeader-sc-1dhiygf-4 fWHjex">Заказчики
+                                  </div>
+                                </div>
+                              </a></div>
+                            <div
+                              class="middle aligned six wide computer four wide large screen twelve wide mobile six wide tablet four wide widescreen column MainMenuItemsStyles__ItemContainer-sc-1dhiygf-1 gITwqG">
+                              <a href="https://old.edu.upt24.ru/#/offers">
+                                <div
+                                  class="ui tiny header MainMenuItemsStyles__MenuItemHeaderConteiner-sc-1dhiygf-6 GrjSK">
+                                  <img src="/static/offers.svg"
+                                    class="ui image MainMenuItemsStyles__MenuItemImage-sc-1dhiygf-5 dLyMLH">
+                                  <div class="content MainMenuItemsStyles__MenuItemHeader-sc-1dhiygf-4 fWHjex">Оферты
+                                  </div>
+                                </div>
+                              </a></div>
+                            <div
+                              class="middle aligned six wide computer four wide large screen twelve wide mobile six wide tablet four wide widescreen column MainMenuItemsStyles__ItemContainer-sc-1dhiygf-1 gITwqG">
+                              <a href="https://old.edu.upt24.ru/#/contracts/public">
+                                <div
+                                  class="ui tiny header MainMenuItemsStyles__MenuItemHeaderConteiner-sc-1dhiygf-6 GrjSK">
+                                  <img src="/static/contracts.svg"
+                                    class="ui image MainMenuItemsStyles__MenuItemImage-sc-1dhiygf-5 dLyMLH">
+                                  <div class="content MainMenuItemsStyles__MenuItemHeader-sc-1dhiygf-4 fWHjex">Контракты
+                                  </div>
+                                </div>
+                              </a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="three wide column MainMenuItemsStyles__DividedMainLine-sc-1dhiygf-3 cyURiQ">
+                  <div class="ui horizontally padded grid">
+                    <div class="row">
+                      <div class="column"><a class="ui small header" href="https://edu.upt24.ru/region">Регионы</a>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="column"><a href="http://mos-tender.com/" target="_blank"
+                          class="ui small header">Мероприятия</a></div>
+                    </div>
+                    <div class="row">
+                      <div class="column"><a href="https://ppforum.tender.mos.ru/viewforum.php?f=46" target="_blank"
+                          class="ui small header">Общественное обсуждение</a></div>
+                    </div>
+                    <div class="row">
+                      <div class="column"><a class="ui small header"
+                          href="https://edu.upt24.ru/knowledgebase/main">Центр поддержки</a></div>
+                    </div>
+                    <div class="row">
+                      <div class="column"><a class="ui small header"
+                          href="https://edu.upt24.ru/knowledgebase/article/regulation/cms">Регламент</a></div>
+                    </div>
+                    <div class="row">
+                      <div class="column"><a class="ui small header" href="https://edu.upt24.ru/sitemap">Карта сайта</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui overlay top sidebar">
+          <div class="ui container">
+            <div class="ui vertically padded grid">
+              <div class="row UserMenuItemsStyles__MenuContainerGridRow-dp2n5g-0 iyITEw">
+                <div
+                  class="right floated four wide computer four wide large screen six wide tablet four wide widescreen column">
+                  <div class="ui fluid vertical menu">
+                    <div class="item"><a class="ui basic fluid button" role="button"
+                        href="https://edu.upt24.ru/login">Войти</a></div>
+                    <div class="item"><a class="ui fluid primary button" role="button"
+                        href="https://edu.upt24.ru/registration">Зарегистрироваться</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pusher">
+          <div class="SiteLayoutStyles__LayoutWrapper-lo0m7x-0 ePxtdV">
+            <div class="SiteLayoutStyles__LayoutMain-lo0m7x-1 eWCNQu">
+              <div class="SiteLayoutStyles__LayoutBody-lo0m7x-2 jeAHkE">
+                <div class="PurchaseListPageHeaderStyles__PageHeaderBackground-sc-1iiknaw-0 fcIQeJ">
+                  <div class="ui container">
+                    <div class="PurchaseListPageHeaderStyles__PageHeaderContainer-sc-1iiknaw-1 dABFFA"><a
+                        href="https://old.edu.upt24.ru/#/plans"
+                        class="PurchaseListPageHeaderStyles__PageHeaderLink-sc-1iiknaw-3 gNfULm"><i aria-hidden="true"
+                          class="angle left icon PurchaseListPageHeaderStyles__PageHeaderLinkLeftArrow-sc-1iiknaw-5 ijhqYl"></i><img
+                          src="/static/plans_icon.svg"
+                          class="PurchaseListPageHeaderStyles__PageHeaderLinkIcon-sc-1iiknaw-4 kpwWGf">Планы</a>
+                      <h1 class="PurchaseListPageHeaderStyles__PageHeaderText-sc-1iiknaw-2 vGEfO">Единый реестр закупок
+                      </h1><a href="https://old.edu.upt24.ru/#/contracts/public"
+                        class="PurchaseListPageHeaderStyles__PageHeaderLink-sc-1iiknaw-3 gNfULm"><img
+                          src="/static/contracts_icon.svg"
+                          class="PurchaseListPageHeaderStyles__PageHeaderLinkIcon-sc-1iiknaw-4 kpwWGf">Контракты<i
+                          aria-hidden="true"
+                          class="angle right icon PurchaseListPageHeaderStyles__PageHeaderLinkRightArrow-sc-1iiknaw-6 hzBAeo"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="PurchaseListTabSelectorStyles__TabSelectorBackground-sc-18dm6g2-0 kaLlEf">
+                  <div class="ui container">
+                    <div class="PurchaseListTabSelectorStyles__TabContainer-sc-18dm6g2-1 eMAitv">
+                      <div class="PurchaseListTabSelectorStyles__Tab-sc-18dm6g2-2 lnBHGO">
+                        <div class="PurchaseListTabSelectorStyles__TabIcon-sc-18dm6g2-3 fdHgPs"></div><span>Все
+                          закупки</span>
+                      </div>
+                      <div class="PurchaseListTabSelectorStyles__Tab-sc-18dm6g2-2 bvbWIN">
+                        <div class="PurchaseListTabSelectorStyles__TabIcon-sc-18dm6g2-3 dCPBwz"></div>
+                        <span>Котировочные<br>сессии</span>
+                      </div>
+                      <div class="PurchaseListTabSelectorStyles__Tab-sc-18dm6g2-2 bvbWIN">
+                        <div class="PurchaseListTabSelectorStyles__TabIcon-sc-18dm6g2-3 jtHmIH"></div><span>Закупки
+                          по<br>потребностям</span>
+                      </div>
+                      <div class="PurchaseListTabSelectorStyles__Tab-sc-18dm6g2-2 bvbWIN">
+                        <div class="PurchaseListTabSelectorStyles__TabIcon-sc-18dm6g2-3 fLVyED"></div><span>Закупки
+                          44-ФЗ<br>и 223-ФЗ</span>
+                      </div>
+                      <div class="PurchaseListTabSelectorStyles__Tab-sc-18dm6g2-2 bvbWIN">
+                        <div class="PurchaseListTabSelectorStyles__TabIcon-sc-18dm6g2-3 cXWqRn"></div><span>B2B
+                          закупки</span>
+                      </div>
+                    </div>
+                    <div class="PurchaseListTabSelectorStyles__DropdownContainer-sc-18dm6g2-4 fAoydt">
+                      <div role="listbox" aria-expanded="false" class="ui fluid dropdown" tabindex="0">
+                        <div class="text" role="alert" aria-live="polite" aria-atomic="true">
+                          <div class="PurchaseListTabSelectorStyles__DropdownValueContainer-sc-18dm6g2-5 fXoYb">
+                            <div class="PurchaseListTabSelectorStyles__DropdownItemContent-sc-18dm6g2-7 gUxTCK"><img
+                                src="/static/tab_all_mobile_icon.svg" class="ui image">Все закупки</div>
+                          </div>
+                        </div><i aria-hidden="true" class="angle down icon"></i>
+                        <div class="menu transition PurchaseListTabSelectorStyles__DropdownMenu-sc-18dm6g2-6 VUMgc">
+                          <div role="option" class="item">
+                            <div class="PurchaseListTabSelectorStyles__DropdownItemContent-sc-18dm6g2-7 gUxTCK"><img
+                                src="/static/tab_all_mobile_icon.svg" class="ui image">Все закупки</div>
+                          </div>
+                          <div role="option" class="item">
+                            <div class="PurchaseListTabSelectorStyles__DropdownItemContent-sc-18dm6g2-7 gUxTCK"><img
+                                src="/static/tab_auctions_mobile_icon.svg" class="ui image">Котировочные сессии</div>
+                          </div>
+                          <div role="option" class="item">
+                            <div class="PurchaseListTabSelectorStyles__DropdownItemContent-sc-18dm6g2-7 gUxTCK"><img
+                                src="/static/tab_needsb2g_mobile_icon.svg" class="ui image">Закупки по потребностям
+                            </div>
+                          </div>
+                          <div role="option" class="item">
+                            <div class="PurchaseListTabSelectorStyles__DropdownItemContent-sc-18dm6g2-7 gUxTCK"><img
+                                src="/static/tab_tenders_mobile_icon.svg" class="ui image">Закупки 44-ФЗ и 223-ФЗ</div>
+                          </div>
+                          <div role="option" class="item">
+                            <div class="PurchaseListTabSelectorStyles__DropdownItemContent-sc-18dm6g2-7 gUxTCK"><img
+                                src="/static/tab_needsb2b_mobile_icon.svg" class="ui image">B2B закупки</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="PurchaseListHeaderActionsStyles__ActionsBackground-sc-1xdzdw1-0 jNgKeL">
+                  <div class="ui container">
+                    <div class="PurchaseListHeaderActionsStyles__ActionsContainer-sc-1xdzdw1-1 dzJFrm">
+                      <div><span class="PurchaseListHeaderActionsStyles__FoundText-sc-1xdzdw1-2 tfAAY">Найдено
+                          <b>983403</b></span></div>
+                      <div class="DashedButton-sc-1h3mhvj-0 ehZLAH"><span>Показать фильтры</span><i aria-hidden="true"
+                          class="blue angle down icon"></i></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="app"></div>
+                <div>
+                </div>
+              <div class="SiteLayoutStyles__LayoutFooter-lo0m7x-3 cLpVAr">
+                <div class="FooterStyles__FooterMain-vihsfp-0 iwIxRe">
+                  <div class="ui container FooterStyles__FooterContainer-vihsfp-1 hWEjIb">
+                    <div class="ui grid">
+                      <div class="row">
+                        <div
+                          class="eight wide computer eight wide large screen twelve wide mobile six wide tablet eight wide widescreen column">
+                          <div class="ui doubling stackable grid">
+                            <div class="row">
+                              <div
+                                class="two wide computer two wide large screen twelve wide mobile six wide tablet two wide widescreen column">
+                                <a href="https://edu.upt24.ru/about">
+                                  <div class="ui blue medium header FooterStyles__FooterLink-vihsfp-2 jvJWNW">О портале
+                                  </div>
+                                </a></div>
+                              <div
+                                class="two wide computer two wide large screen twelve wide mobile six wide tablet two wide widescreen column">
+                                <div class="SupportModalStyles__Trigger-sc-1th3c7c-0 eevxzQ">
+                                  <div class="ui blue medium header FooterStyles__FooterLink-vihsfp-2 jvJWNW">Контакты
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="two wide computer two wide large screen twelve wide mobile six wide tablet two wide widescreen column">
+                                <a href="https://old.edu.upt24.ru/#/news">
+                                  <div class="ui blue medium header FooterStyles__FooterLink-vihsfp-2 jvJWNW">Новости
+                                  </div>
+                                </a></div>
+                              <div
+                                class="four wide computer three wide large screen twelve wide mobile six wide tablet three wide widescreen column">
+                                <a href="https://edu.upt24.ru/knowledgebase/main">
+                                  <div class="ui blue medium header FooterStyles__FooterLink-vihsfp-2 jvJWNW">Центр
+                                    поддержки</div>
+                                </a></div>
+                              <div
+                                class="two wide computer three wide large screen twelve wide mobile six wide tablet three wide widescreen column">
+                                <a href="https://edu.upt24.ru/sitemap">
+                                  <div class="ui blue medium header FooterStyles__FooterLink-vihsfp-2 jvJWNW">Карта
+                                    сайта</div>
+                                </a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="right floated four wide computer four wide large screen twelve wide mobile six wide tablet four wide widescreen column">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui fitted divider"></div>
+                  <div class="ui container FooterStyles__FooterContainer-vihsfp-1 hWEjIb">
+                    <div class="ui middle aligned grid">
+                      <div class="row">
+                        <div
+                          class="eight wide computer eight wide large screen twelve wide mobile six wide tablet eight wide widescreen column">
+                          <div class="ui grey medium header FooterStyles__FooterVersion-vihsfp-6 jvFQPm">© 2017-2020 <a
+                              href="https://old.edu.upt24.ru/#/updates">v.20191217</a></div>
+                        </div>
+                        <div
+                          class="four wide computer four wide large screen six wide tablet four wide widescreen column">
+                          <div class="ui grey medium header">Мы в социальных сетях</div>
+                          <div class="FooterStyles__FooterSocialLinkContainer-vihsfp-7 bhmdLn"><a target="_blank"
+                              class="ui circular inline image" href="https://www.facebook.com/tendermos"><img
+                                src="/static/facebook.svg" width="50" height="50"></a><a target="_blank"
+                              class="ui circular inline image" href="https://twitter.com/tendermospress"><img
+                                src="/static/twitter.svg" width="50" height="50"></a><a target="_blank"
+                              class="ui circular inline image" href="https://www.instagram.com/mos_tender/"><img
+                                src="/static/instargam.svg" width="50" height="50"></a><a target="_blank"
+                              class="ui circular inline image" href="https://vk.com/tendermosru"><img
+                                src="/static/vkonakte.svg" width="50" height="50"></a><a target="_blank"
+                              class="ui circular inline image"
+                              href="https://www.youtube.com/channel/UCNcUOaCjtcPMUlkcCeHtoWw"><img
+                                src="/static/youtube.svg" width="50" height="50"></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>!function (o) { function e(e) { for (var t, r, c = e[0], d = e[1], f = e[2], n = 0, a = []; n < c.length; n++)r = c[n], Object.prototype.hasOwnProperty.call(s, r) && s[r] && a.push(s[r][0]), s[r] = 0; for (t in d) Object.prototype.hasOwnProperty.call(d, t) && (o[t] = d[t]); for (p && p(e); a.length;)a.shift()(); return i.push.apply(i, f || []), u() } function u() { for (var e, t = 0; t < i.length; t++) { for (var r = i[t], c = !0, d = 1; d < r.length; d++) { var f = r[d]; 0 !== s[f] && (c = !1) } c && (i.splice(t--, 1), e = b(b.s = r[0])) } return e } var r = {}, l = { 14: 0 }, s = { 14: 0 }, i = []; function b(e) { if (r[e]) return r[e].exports; var t = r[e] = { i: e, l: !1, exports: {} }; return o[e].call(t.exports, t, t.exports, b), t.l = !0, t.exports } b.e = function (i) { var e = []; l[i] ? e.push(l[i]) : 0 !== l[i] && { 4: 1, 18: 1 }[i] && e.push(l[i] = new Promise(function (e, c) { for (var t = "static/css/" + ({}[i] || i) + "." + { 0: "31d6cfe0", 1: "31d6cfe0", 2: "31d6cfe0", 3: "31d6cfe0", 4: "6d5c8fb7", 5: "31d6cfe0", 6: "31d6cfe0", 7: "31d6cfe0", 8: "31d6cfe0", 9: "31d6cfe0", 10: "31d6cfe0", 11: "31d6cfe0", 12: "31d6cfe0", 16: "31d6cfe0", 17: "31d6cfe0", 18: "0ed37f7d", 19: "31d6cfe0", 20: "31d6cfe0", 21: "31d6cfe0", 22: "31d6cfe0", 23: "31d6cfe0", 24: "31d6cfe0", 25: "31d6cfe0", 26: "31d6cfe0", 27: "31d6cfe0", 28: "31d6cfe0", 29: "31d6cfe0", 30: "31d6cfe0", 31: "31d6cfe0", 32: "31d6cfe0", 33: "31d6cfe0", 34: "31d6cfe0", 35: "31d6cfe0", 36: "31d6cfe0", 37: "31d6cfe0", 38: "31d6cfe0", 39: "31d6cfe0", 40: "31d6cfe0", 41: "31d6cfe0", 42: "31d6cfe0", 43: "31d6cfe0", 44: "31d6cfe0", 45: "31d6cfe0", 46: "31d6cfe0", 47: "31d6cfe0", 48: "31d6cfe0", 49: "31d6cfe0", 50: "31d6cfe0", 51: "31d6cfe0", 52: "31d6cfe0", 53: "31d6cfe0", 54: "31d6cfe0", 55: "31d6cfe0" }[i] + ".chunk.css", d = b.p + t, r = document.getElementsByTagName("link"), f = 0; f < r.length; f++) { var n = (o = r[f]).getAttribute("data-href") || o.getAttribute("href"); if ("stylesheet" === o.rel && (n === t || n === d)) return e() } var a = document.getElementsByTagName("style"); for (f = 0; f < a.length; f++) { var o; if ((n = (o = a[f]).getAttribute("data-href")) === t || n === d) return e() } var u = document.createElement("link"); u.rel = "stylesheet", u.type = "text/css", u.onload = e, u.onerror = function (e) { var t = e && e.target && e.target.src || d, r = new Error("Loading CSS chunk " + i + " failed.\n(" + t + ")"); r.code = "CSS_CHUNK_LOAD_FAILED", r.request = t, delete l[i], u.parentNode.removeChild(u), c(r) }, u.href = d, document.getElementsByTagName("head")[0].appendChild(u) }).then(function () { l[i] = 0 })); var r = s[i]; if (0 !== r) if (r) e.push(r[2]); else { var t = new Promise(function (e, t) { r = s[i] = [e, t] }); e.push(r[2] = t); var c, d = document.createElement("script"); d.charset = "utf-8", d.timeout = 120, b.nc && d.setAttribute("nonce", b.nc), d.src = b.p + "static/js/" + ({}[i] || i) + "." + { 0: "5301073b", 1: "4a8f3351", 2: "82e2fc0c", 3: "6734a897", 4: "6533d1ac", 5: "1bbc2411", 6: "14bb6a7b", 7: "56327750", 8: "0ac99541", 9: "89b79890", 10: "aabd2331", 11: "ac1b63e7", 12: "957009a3", 16: "72ffe1ab", 17: "7a8972fb", 18: "7036d1dd", 19: "399222a4", 20: "0b2654db", 21: "d87176e3", 22: "0eb0fd46", 23: "d55cc437", 24: "36d4b871", 25: "afb16edd", 26: "4097b91e", 27: "e95687e5", 28: "7815e461", 29: "82b93ab6", 30: "04b2aa7d", 31: "4830cd49", 32: "7a2ffe15", 33: "79010889", 34: "1cf48db3", 35: "6b3bf7d8", 36: "8a5c77d4", 37: "85594bcc", 38: "8a30c294", 39: "04d301d9", 40: "8152b6ad", 41: "de42b22d", 42: "d1fa4dfd", 43: "211279e8", 44: "f478d974", 45: "8de45f22", 46: "691b6b14", 47: "28da9b46", 48: "45ff55b6", 49: "2615925c", 50: "0e1b0f7a", 51: "ee3c7b69", 52: "b2e4a1ef", 53: "bacd8e2b", 54: "abb88400", 55: "905b785d" }[i] + ".chunk.js"; var f = new Error; c = function (e) { d.onerror = d.onload = null, clearTimeout(n); var t = s[i]; if (0 !== t) { if (t) { var r = e && ("load" === e.type ? "missing" : e.type), c = e && e.target && e.target.src; f.message = "Loading chunk " + i + " failed.\n(" + r + ": " + c + ")", f.name = "ChunkLoadError", f.type = r, f.request = c, t[1](f) } s[i] = void 0 } }; var n = setTimeout(function () { c({ type: "timeout", target: d }) }, 12e4); d.onerror = d.onload = c, document.head.appendChild(d) } return Promise.all(e) }, b.m = o, b.c = r, b.d = function (e, t, r) { b.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r }) }, b.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, b.t = function (t, e) { if (1 & e && (t = b(t)), 8 & e) return t; if (4 & e && "object" == typeof t && t && t.__esModule) return t; var r = Object.create(null); if (b.r(r), Object.defineProperty(r, "default", { enumerable: !0, value: t }), 2 & e && "string" != typeof t) for (var c in t) b.d(r, c, function (e) { return t[e] }.bind(null, c)); return r }, b.n = function (e) { var t = e && e.__esModule ? function () { return e.default } : function () { return e }; return b.d(t, "a", t), t }, b.o = function (e, t) { return Object.prototype.hasOwnProperty.call(e, t) }, b.p = "/", b.oe = function (e) { throw console.error(e), e }; var t = this["webpackJsonppp3-web"] = this["webpackJsonppp3-web"] || [], c = t.push.bind(t); t.push = e, t = t.slice(); for (var d = 0; d < t.length; d++)e(t[d]); var p = c; u() }([])</script>
+  <div class="footer-frame-wrp"><iframe src="/static/footer.html" id="footer_frame" scrolling="no" style="height: 0px;"
+      width="100%" frameborder="0"></iframe></div><svg id="SvgjsSvg1001" width="2" height="0"
+    xmlns="http://www.w3.org/2000/svg" version="1.1" xlink="http://www.w3.org/1999/xlink" svgjs="http://svgjs.com/svgjs"
+    style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;">
+    <defs id="SvgjsDefs1002"></defs>
+    <polyline id="SvgjsPolyline1003" points="0,0"></polyline>
+    <path id="SvgjsPath1004" d="M0 0 "></path>
+  </svg>
   </body>
 </html>
