@@ -1,0 +1,27 @@
+[Unit]
+Description=Tender search service XLSX parser
+ConditionPathExists=/var/www/tender_hack/tender_search/backend/tender_search
+After=network.target
+
+[Service]
+Type=simple
+User=root
+LimitNOFILE=1024
+
+Restart=on-failure
+RestartSec=10
+
+WorkingDirectory=/var/www/tender_hack/tender_search/backend/
+ExecStart=/var/www/tender_hack/tender_search/backend/tender_search
+
+# make sure log directory exists and owned by syslog
+PermissionsStartOnly=true
+ExecStartPre=/bin/mkdir -p /var/log/tender_search
+ExecStartPre=/bin/chown syslog:adm /var/log/tender_search
+ExecStartPre=/bin/chmod 755 /var/log/tender_search
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=tender_search
+ 
+[Install]
+WantedBy=multi-user.target
