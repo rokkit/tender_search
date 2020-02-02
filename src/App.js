@@ -15,6 +15,8 @@ function App() {
     }
   })
 
+  document.getElementById('foundedCount').innerText = itemsTpl.length
+
   return (
     <div>
       <div className="App">
