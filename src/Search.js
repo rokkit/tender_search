@@ -6,8 +6,6 @@ import Input from './Input'
 import Drop from './Drop'
 import Chooser from './Chooser'
 
-import _ from 'lodash'
-
 const Search = (props) => {
   const initialState = {
     isLoading: false,
@@ -169,8 +167,13 @@ const Button = (props) => {
     )
   }
 
+  const onClick = () => {
+    const el = document.getElementById('itemsContainer')
+    el.scrollIntoView({behavior: 'smooth'})
+  }
+
   return (
-    <button className="NewOrder_go__8hTne">
+    <button onClick={onClick} className="NewOrder_go__8hTne">
       <span className="NewOrder_web__11j3A">Продолжить</span>
       <span className="NewOrder_noWeb__2yFIb">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

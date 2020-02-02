@@ -24,7 +24,7 @@ function App() {
           <Search setProducts={setProducts} />
         </header>
       </div>
-      <div>
+      <div id="itemsContainer">
         {itemsTpl}
       </div>
     </div>

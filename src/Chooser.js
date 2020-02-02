@@ -51,7 +51,7 @@ const Chooser = (props) => {
   //   }
   // })
   var secondGroup = []
-  _.keys(props.secondGroup).map((tKey) => {
+  _.keys(props.secondGroup).forEach((tKey) => {
     if(firstGroupVal != '' && props.secondGroup[tKey] == firstGroupVal) secondGroup.push(tKey)
   })
 

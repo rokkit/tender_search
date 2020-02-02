@@ -100,7 +100,6 @@ const Recommend = (props) => {
 
     color: 'rgb(153, 153, 153)',
     fontSize: 15,
-    backgroundColor: 'rgb(255, 255, 255)',
     borderRadius: '10px 10px 10px 10px',
     boxShadow: 'rgba(0, 0, 0, 0.1) 0px 3px 4px',
     borderTop: '2px solid rgb(241, 241, 241)',
