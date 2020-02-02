@@ -9,6 +9,8 @@ const Chooser = (props) => {
 
   const onFirstGroupValChange = (val) => {
     setFirstGroupVal(val)
+    setSecondGroupVal('')
+    props.onTClassChange('')
     props.onPClassChange(val)
   }
 
@@ -16,8 +18,6 @@ const Chooser = (props) => {
     setSecondGroupVal(val)
     props.onTClassChange(val)
   }
-
-  var secondGroup = []
 
   const styles = {
     color: '#999',
@@ -43,12 +43,16 @@ const Chooser = (props) => {
     return <p style={styles}>По вашему запросу позиций не найдено, уточните запрос</p>
   }
 
-  props.items.map((p) => {
-    if(firstGroupVal != '' && firstGroupVal == p['Вид продукции']) {
-      if(secondGroup.indexOf(p['Вид товаров']) == -1) {
-        secondGroup.push(p['Вид товаров'])
-      }
-    }
+  // props.items.map((p) => {
+  //   if(firstGroupVal != '' && firstGroupVal == p['Вид продукции']) {
+  //     if(secondGroup.indexOf(p['Вид товаров']) == -1) {
+  //       secondGroup.push(p['Вид товаров'])
+  //     }
+  //   }
+  // })
+  var secondGroup = []
+  _.keys(props.secondGroup).map((tKey) => {
+    if(firstGroupVal != '' && props.secondGroup[tKey] == firstGroupVal) secondGroup.push(tKey)
   })
 
   return (

@@ -51,6 +51,12 @@
     content="Портал поставщиков – уникальный ресурс для бизнес-сообщества – единая витрина всех закупок города Москвы и удобная площадка для совершения сделок физическими, юридическими лицами и государственными заказчиками"
     data-react-helmet="true">
   <meta name="twitter:image" content="/static/media/pp_logo_mini.3064ec4b.svg" data-react-helmet="true">
+
+  <style>
+    .recommendLink:hover {
+      cursor: pointer;
+    }
+  </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -443,7 +449,7 @@
                   <div class="ui container">
                     <div class="PurchaseListHeaderActionsStyles__ActionsContainer-sc-1xdzdw1-1 dzJFrm">
                       <div><span class="PurchaseListHeaderActionsStyles__FoundText-sc-1xdzdw1-2 tfAAY">Найдено
-                          <b>983403</b></span></div>
+                          <b id="foundedCount">0</b></span></div>
                       <div class="DashedButton-sc-1h3mhvj-0 ehZLAH"><span>Показать фильтры</span><i aria-hidden="true"
                           class="blue angle down icon"></i></div>
                     </div>

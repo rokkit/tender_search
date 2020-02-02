@@ -65,29 +65,47 @@ const Search = (props) => {
   const onDropChange = (val) => {
     setState(prevState => Object.assign({}, prevState, {
       batchNames: val,
-      isChooserActive: false
+      isChooserActive: false,
+      isLoading: true
+    }))
+  }
+
+  const onDrop = () => {
+    setState(prevState => Object.assign({}, prevState, {
+      isChooserActive: false,
+      isLoading: true
     }))
   }
 
   const parseProducts = (resp) => {
-    const productItems = resp['payload']
+    const productItems = removeDuplicates(resp['payload'], 'Id')
+    document.getElementById('foundedCount').innerText = productItems.length
     props.setProducts(productItems)
     setState(prevState => Object.assign({}, prevState, {
       isLoading: false,
       isChooserActive: true,
       productItems: productItems,
-      firstGroup: resp['class_p']
+      firstGroup: resp['class_p'],
+      secondGroup: resp['class_t']
     }))
   }
 
+  const removeDuplicates = (myArr, prop) => {
+    return myArr.filter((obj, pos, arr) => {
+        return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos;
+    });
+  }
+
   const parseBatchProducts = (resp) => {
-    const productItems = resp['payload']
+    const productItems = removeDuplicates(resp['payload'], 'Id')
+    document.getElementById('foundedCount').innerText = productItems.length
     props.setProducts(productItems)
     setState(prevState => Object.assign({}, prevState, {
       isLoading: false,
       isChooserActive: false,
       productItems: productItems,
-      firstGroup: resp['class_p']
+      firstGroup: resp['class_p'],
+      secondGroup: resp['class_t']
     }))
   }
 
@@ -118,11 +136,10 @@ const Search = (props) => {
   }
 
   const fetchProducts = async (val, pClass, tClass) => {
-    return await makeRequest({
-      "text": val,
-      "class_p": pClass,
-      "class_t": tClass
-    })
+    var request = {text: val}
+    if(pClass && pClass !== "") request["class_p"] = pClass
+    if(tClass && tClass !== "") request["class_t"] = tClass
+    return await makeRequest(request)
   }
 
   const styles = {
@@ -136,9 +153,9 @@ const Search = (props) => {
         {
           state.isChooserActive
           &&
-          <Chooser onPClassChange={onPClassChange} onTClassChange={onTClassChange} firstGroup={state.firstGroup} items={state.productItems} isActive={state.isChooserActive} isLoading={state.isLoading} />
+          <Chooser onPClassChange={onPClassChange} onTClassChange={onTClassChange} firstGroup={state.firstGroup} secondGroup={state.secondGroup} items={state.productItems} isActive={state.isChooserActive} isLoading={state.isLoading} />
         }
-        {!state.isChooserActive && <Drop isLoading={state.isLoading} onChange={onDropChange} />}
+        {!state.isChooserActive && <Drop isLoading={state.isLoading} onDrop={onDrop} onChange={onDropChange} />}
         <Button isLoading={state.isLoading} />
       </div>
     </div>
