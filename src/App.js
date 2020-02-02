@@ -6,8 +6,13 @@ import Item from './Item'
 function App() {
   const [products, setProducts] = useState([{}])
 
+  var ids = {}
+
   const itemsTpl = products.map((p, i) => {
-    return <Item item={p} key={i} />
+    if(typeof(ids[p]) == 'undefined') {
+      ids[p] = true
+      return <Item item={p} key={i} />
+    }
   })
 
   return (

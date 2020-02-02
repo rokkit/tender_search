@@ -78,7 +78,7 @@ const Search = (props) => {
   }
 
   const parseProducts = (resp) => {
-    const productItems = removeDuplicates(resp['payload'], 'Id')
+    const productItems = resp['payload'] //removeDuplicates(resp['payload'], 'Id')
     document.getElementById('foundedCount').innerText = productItems.length
     props.setProducts(productItems)
     setState(prevState => Object.assign({}, prevState, {
