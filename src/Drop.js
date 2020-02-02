@@ -28,7 +28,7 @@ const Drop = (props) => {
     const formData = new FormData();
 
     formData.append('file', file);
-    fetch('http://localhost:8080/upload', { // Your POST endpoint
+    fetch('http://185.91.54.83:7001/upload', { // Your POST endpoint
       method: 'POST',
       mode: 'cors',
       body: formData // This is your file object

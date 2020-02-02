@@ -4,6 +4,7 @@ import './Search.css'
 
 import Input from './Input'
 import Drop from './Drop'
+import Chooser from './Chooser'
 
 import _ from 'lodash'
 
@@ -26,14 +27,15 @@ const Search = (props) => {
       return
     }
     setState(prevState => Object.assign({}, prevState, {
-      isLoading: true
+      isLoading: true,
+      isChooserActive: true
     }))
     fetchProducts(state.query, state.pClassChoosed, state.tClassChoosed).then(parseProducts)
   }, [state.query, state.pClassChoosed, state.tClassChoosed])
 
   useEffect(() => {
     if(state.batchNames.length == 0) return
-    batchFetchProducts(state.batchNames).then(parseProducts)
+    batchFetchProducts(state.batchNames).then(parseBatchProducts)
   }, [state.batchNames])
 
   const onQueryChange = (val) => {
@@ -62,7 +64,8 @@ const Search = (props) => {
 
   const onDropChange = (val) => {
     setState(prevState => Object.assign({}, prevState, {
-      batchNames: val
+      batchNames: val,
+      isChooserActive: false
     }))
   }
 
@@ -72,6 +75,17 @@ const Search = (props) => {
     setState(prevState => Object.assign({}, prevState, {
       isLoading: false,
       isChooserActive: true,
+      productItems: productItems,
+      firstGroup: resp['class_p']
+    }))
+  }
+
+  const parseBatchProducts = (resp) => {
+    const productItems = resp['payload']
+    props.setProducts(productItems)
+    setState(prevState => Object.assign({}, prevState, {
+      isLoading: false,
+      isChooserActive: false,
       productItems: productItems,
       firstGroup: resp['class_p']
     }))
@@ -114,7 +128,7 @@ const Search = (props) => {
   const styles = {
     minWidth: 960
   }
-  console.log('render')
+
   return (
     <div className="NewOrder_newClaim__3gVH9" style={styles}>
       <div className="NewOrder_newClaimAction__IicAX">
@@ -122,82 +136,11 @@ const Search = (props) => {
         {
           state.isChooserActive
           &&
-          <Chooser onPClassChange={onPClassChange} onTClassChange={onTClassChange} firstGroup={state.firstGroup} items={state.productItems} isActive={state.isChooserActive} />
+          <Chooser onPClassChange={onPClassChange} onTClassChange={onTClassChange} firstGroup={state.firstGroup} items={state.productItems} isActive={state.isChooserActive} isLoading={state.isLoading} />
         }
         {!state.isChooserActive && <Drop isLoading={state.isLoading} onChange={onDropChange} />}
         <Button isLoading={state.isLoading} />
       </div>
-    </div>
-  )
-}
-
-const Group = (props) => {
-  const [firstGroupVal, setFirstGroupVal] = useState('');
-
-  const firstGroupItems = props.items.map((item, i) => {
-    return <li key={i} onClick={() => {
-      setFirstGroupVal(item)
-      props.onChange(item)
-    }} className={`NewOrder_item__6cbjd ${firstGroupVal === item ? "NewOrder_active__1Tlml" : ''}`}>{item} </li>
-  })
-
-  return (
-    <ul className="NewOrder_list__23D5U">
-      {firstGroupItems}
-    </ul>
-  )
-}
-
-const Chooser = (props) => {
-
-  const [firstGroupVal, setFirstGroupVal] = useState('')
-  const [secondGroupVal, setSecondGroupVal] = useState('')
-
-  const onFirstGroupValChange = (val) => {
-    setFirstGroupVal(val)
-    props.onPClassChange(val)
-  }
-
-  const onSecondGroupValChange = (val) => {
-    setSecondGroupVal(val)
-    props.onTClassChange(val)
-  }
-
-  var secondGroup = []
-
-  const styles = {
-    color: '#999',
-    minHeight: 30,
-    paddingTop: 30,
-    color: '#999',
-    fontSize: 15,
-    backgroundColor: '#fff',
-    padding: '41px 47px',
-    borderRadius: '0 0 10px 10px',
-    boxShadow: '0 3px 30px rgba(0,0,0,.1)',
-    borderLeft: '2px solid #f1f1f1',
-    borderRight: '2px solid #f1f1f1',
-    borderBottom: '2px solid #f1f1f1',
-    textAlign: 'center'
-  }
-  if(props.items.length === 0) {
-    return <p style={styles}>По вашему запросу позиций не найдено, уточните запрос</p>
-  }
-
-  props.items.map((p) => {
-    if(firstGroupVal != '' && firstGroupVal == p['Вид продукции']) {
-      if(secondGroup.indexOf(p['Вид товаров']) == -1) {
-        secondGroup.push(p['Вид товаров'])
-      }
-    }
-  })
-
-  return (
-    <div className={`NewOrder_dropdown__36dDM ${props.isActive ? "NewOrder_active__1Tlml" : ""}`}>
-      <div className="NewOrder_subtitle__2jMQG">Группа товаров</div>
-      <Group onChange={onFirstGroupValChange} items={props.firstGroup} />
-      <div className="NewOrder_subtitle__2jMQG">Подгруппа товара</div>
-      <Group onChange={onSecondGroupValChange} items={secondGroup} />
     </div>
   )
 }
