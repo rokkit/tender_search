@@ -145,7 +145,7 @@ const Search = (props) => {
   }
 
   return (
-    <div className="NewOrder_newClaim__3gVH9" style={styles}>
+    <div className="NewOrder_newClaim__3gVH9 SearchBlock">
       <div className="NewOrder_newClaimAction__IicAX">
         <Input onQueryChange={onQueryChange} />
         {

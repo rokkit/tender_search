@@ -56,6 +56,35 @@
     .recommendLink:hover {
       cursor: pointer;
     }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+      .SearchBlock {
+        min-width: 320px;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+      .SearchBlock {
+        min-width: 320px;
+      }
+    }
+
+    @media (min-width: 1281px) {
+      .SearchBlock {
+        min-width: 960px;
+      }
+    }
+
+    /*
+      ##Device = Laptops, Desktops
+      ##Screen = B/w 1025px to 1280px
+    */
+
+    @media (min-width: 1025px) and (max-width: 1280px) {
+      .SearchBlock {
+        min-width: 960px;
+      }
+    }
   </style>
   </head>
   <body>
@@ -167,12 +196,6 @@
                       <div class="content">Корзина</div>
                     </div>
                   </span></span>
-              </div>
-              <div
-                class="right aligned four wide computer three wide large screen three wide mobile five wide tablet three wide widescreen column">
-                <div class="ui right floated buttons"><a class="ui primary button" role="button"
-                    href="https://edu.upt24.ru/registration">Зарегистрироваться</a><button
-                    class="ui button">Войти</button></div>
               </div>
             </div>
           </div>
