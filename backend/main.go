@@ -1,11 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"net/http"
 
 	"github.com/tealeg/xlsx"
+	"encoding/json"
+	"fmt"
 )
 
 func uploadFile(w http.ResponseWriter, r *http.Request) {
@@ -37,28 +38,29 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 	}
 
-	parseSheet(fileBytes)
-	// return that we have successfully uploaded our file!
-	// fmt.Fprintf(w, "Successfully Uploaded File\n")
-		w.WriteHeader(http.StatusOK)
+	names := parseSheet(fileBytes)
+	respJSON, _ := json.Marshal(names)
+	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte(`{"message": "hello world"}`))
+	w.Write([]byte(respJSON))
 }
 
-
-func parseSheet(content []byte) {
+func parseSheet(content []byte) []string {
 	xlFile, err := xlsx.OpenBinary(content)
 	if err != nil {
 		fmt.Printf("%s\n", err)
 	}
+
+	var names []string
 	for _, sheet := range xlFile.Sheets {
 		for _, row := range sheet.Rows {
-			for _, cell := range row.Cells {
-				text := cell.String()
-				fmt.Printf("%s\n", text)
-			}
+			cell := row.Cells[0]
+			name := cell.String()
+			names = append(names, name)
 		}
 	}
+
+	return names
 }
 
 func main() {

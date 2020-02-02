@@ -25,7 +25,7 @@ const Item = (props) => {
                     <div className="content">Подача заявок</div>
                   </div>
                 </div><a href="https://old.edu.upt24.ru/#/tenders/30867645"
-                  className="ui header PurchaseCardStyles__MainInfoNameHeader-sc-3hfhop-6 fYuISf">{item['Наименование']}</a><a href="https://old.edu.upt24.ru/#/customers/1140769"
+                  className="ui header PurchaseCardStyles__MainInfoNameHeader-sc-3hfhop-6 fYuISf">{item['Наменование']}</a><a href="https://old.edu.upt24.ru/#/customers/1140769"
                   className="ui tiny header PurchaseCardStyles__MainInfoCustomerHeader-sc-3hfhop-7 kqHmbB">Государственное
                 бюджетное учреждение города Москвы «Жилищник Таганского района» (ИНН: 7709966213)</a>
               </div>

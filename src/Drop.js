@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 
 import {useDropzone} from 'react-dropzone'
 
-const Drop = () => {
+const Drop = (props) => {
   const onDrop = useCallback(acceptedFiles => {
     upload(acceptedFiles[0])
   }, [])
@@ -35,7 +35,7 @@ const Drop = () => {
     }).then(
       response => response.json() // if the response is a JSON object
     ).then(
-      success => console.log(success) // Handle the success response object
+      success => props.onChange(success) // Handle the success response object
     ).catch(
       error => console.log(error) // Handle the error response object
     );
@@ -47,7 +47,11 @@ const Drop = () => {
       {
         isDragActive ?
           <p>Перетащите файл сюда</p> :
-          <p>Для пакетного поиска вы можете перетащить сюда Excel файл с товарами, или кликнуть на это поле</p>
+          <p>
+            {
+              props.isLoading ? 'Подождите, выполняется обработка файла...' : 'Для пакетного поиска вы можете перетащить сюда Excel файл с товарами, или кликнуть на это поле'
+            }
+          </p>
       }
     </div>
   )
