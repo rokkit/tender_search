@@ -4,7 +4,7 @@ import Search from './Search'
 import Item from './Item'
 
 function App() {
-  const [products, setProducts] = useState([{}])
+  const [products, setProducts] = useState([])
 
   var ids = {}
 

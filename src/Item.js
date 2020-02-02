@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Collapse from "@kunukn/react-collapse";
 
@@ -36,7 +36,7 @@ const Item = (props) => {
                       <img alt="" src="/static/tender_card_type_icon.svg" className="ui image" />
                       <div className="content">Закупка 44-ФЗ и 223-ФЗ</div>
                     </div><a href="https://old.edu.upt24.ru/#/tenders/30867645"
-                        className="ui header PurchaseCardStyles__MainInfoNumberHeader-sc-3hfhop-2 kUCUnv">{item['Id']}</a>
+                      className="ui header PurchaseCardStyles__MainInfoNumberHeader-sc-3hfhop-2 kUCUnv">{item['Id']}</a>
                   </div>
                   <div
                     className="ui green tiny header StateIndicator-sc-2e7sf8-0 PurchaseCardStyles__MainInfoStateIndicator-sc-3hfhop-4 kQHlbB">
@@ -45,7 +45,7 @@ const Item = (props) => {
                   </div>
                 </div><a href="https://old.edu.upt24.ru/#/tenders/30867645"
                   className="ui header PurchaseCardStyles__MainInfoNameHeader-sc-3hfhop-6 fYuISf">{item['Наменование']}</a><a href="https://old.edu.upt24.ru/#/customers/1140769"
-        className="ui tiny header PurchaseCardStyles__MainInfoCustomerHeader-sc-3hfhop-7 kqHmbB">{item['Производитель']}</a>
+                    className="ui tiny header PurchaseCardStyles__MainInfoCustomerHeader-sc-3hfhop-7 kqHmbB">{item['Производитель']}</a>
               </div>
               <div
                 className="three wide computer two wide large screen twelve wide mobile twelve wide tablet column PaddedGridColumn-sc-13xlyn9-0 ktqTLU">
@@ -78,13 +78,16 @@ const Item = (props) => {
             Рекомендовано, с этим товаром
           </div>
         </div>
-        <Recommend isOpen={isRecommendShow} />
+        <Recommend name={props.item['Наменование']} isOpen={isRecommendShow} />
       </div>
     </div>
   )
 }
 
 const Recommend = (props) => {
+
+  const [recommends, setRecommends] = useState([])
+
   const recommendedStyles = {
     minWidth: 100,
     backgroundColor: 'rgb(255, 255, 255)',
@@ -110,20 +113,47 @@ const Recommend = (props) => {
     padding: 10,
     cursor: 'pointer'
   }
+
+  useEffect(() => {
+    fetchRecommends(props.name).then((val) => {
+      setRecommends(val)
+    })
+  }, [])
+
+  const fetchRecommends = async (val) => {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      text: val
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow',
+      mode: 'cors'
+    };
+
+    const response = await fetch("http://tenderfind.ru:7777/api/v2/preds/", requestOptions)
+    const json = await response.json();
+    return json['result']['preds']
+  }
+
+  const els = recommends.slice(0, 4).map((el) => {
+    return (<li style={elStyle}>
+      <a href="#">{el}</a>
+      <p>500 ₽</p>
+    </li>)
+  })
   return (
     <Collapse isOpen={props.isOpen} transition={`height 250ms cubic-bezier(.4, 0, .2, 1)`}>
-    <div style={recommendedStyles}>
-      <ul>
-        <li style={elStyle}>
-          <a href="#">Winner Electronics WR-111 электрический чайник</a>
-          <p>1000 ₽</p>
-        </li>
-        <li style={elStyle}>
-          <a href="#">Вареник</a>
-          <p>500 ₽</p>
-        </li>
-      </ul>
-    </div>
+      <div style={recommendedStyles}>
+        <ul>
+          {els}
+        </ul>
+      </div>
     </Collapse>
   )
 }
